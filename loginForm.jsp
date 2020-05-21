@@ -7,8 +7,8 @@
 	<title>ログインフォーム</title>
 </head>
 <body>
-	<form action="" method="post">
-		<div>
+	<div>
+		<form action="" method="post">
 			<div>
 				ログインID<input pattern="^([a-zA-Z0-9]{6,})$" type="text" name="login_id" required>
 				<!-- 半角英数字6文字以上 ^([a-zA-Z0-9]{6,})$ -->
@@ -21,10 +21,10 @@
 			<div>
 				<input type="submit" value="ログイン" >
 			</div>
+		</form>
+		<div>
+			<a href="">登録画面</a>	
 		</div>
-	</form>
-	<div>
-		<a href="">登録画面</a>	
 	</div>
 	<!-- 登録画面の名前を決めていないため空欄です。 -->
 </body>
