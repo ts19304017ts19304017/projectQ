@@ -9,7 +9,7 @@ CREATE TABLE user_table
 	user_key_flag NUMBER(1) default  0 NOT NULL,
 	delete_time DATE,
 	primary key(user_id),
-	unique (user_name_id,user_pass)
+	unique (user_pass)
 );
 
 
@@ -17,11 +17,11 @@ CREATE TABLE follow_table
 (
 	follow_id NUMBER(10) NOT NULL,
 	user_id NUMBER(10) NOT NULL,
-	follwer_id NUMBER(10) NOT NULL,
+	follower_id NUMBER(10) NOT NULL,
 	approval_flag NUMBER(1) default 1 NOT NULL,
 	primary key(follow_id),
 	FOREIGN key (user_id) references user_table(user_id),
-	FOREIGN key (follw_id) references user_table(user_id),
+	FOREIGN key (follow_id) references user_table(user_id),
 	UNIQUE (user_id,follower_id)
 );
 
@@ -68,7 +68,7 @@ CREATE TABLE tweet_image_video_table
 	res_id NUMBER(10),
 	tweet_folder VARCHAR2(100) NOT NULL,
 	FOREIGN key (tweet_id) references tweet_table(tweet_id),
-	FOREIGN key (res_id) references res1_table(res_id)
+	FOREIGN key (res_id) references res_table(res_id)
 );
 
 CREATE TABLE nice_table		
@@ -81,7 +81,7 @@ CREATE TABLE nice_table
 	notice_flag NUMBER(1)　NOT NULL,
 	primary key(nice_id),
 	FOREIGN key (tweet_id) references tweet_table(tweet_id),
-	FOREIGN key (res_id) references res1_table(res_id),
+	FOREIGN key (res_id) references res_table(res_id),
 	FOREIGN key (user_id) references user_table(user_id)
 );
 
@@ -101,7 +101,7 @@ CREATE TABLE retweet_table
 	notice_flag NUMBER(1)　NOT NULL,
 	primary key(retweet_id),
 	FOREIGN key (tweet_id) references tweet_table(tweet_id),
-	FOREIGN key (res_id) references res1_table(res_id),
+	FOREIGN key (res_id) references res_table(res_id),
 	FOREIGN key (user_id) references user_table(user_id)
 );
 
@@ -121,5 +121,4 @@ Drop table res_table;
 Drop  sequence tweet_sequence;
 Drop table tweet_table;
 Drop table follow_table;
-Drop  sequence user_sequence;
 Drop table user_table;
