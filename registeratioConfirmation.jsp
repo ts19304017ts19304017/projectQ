@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="model.User"%>
-<%User  /*~User*/= (User) session.getAttribute/*("~User")*/;%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,24 +8,26 @@
 </head>
 <body>
 	<div>
-		<div>
-	    	<h2>下記のユーザーを登録します</h2>
-		</div>
-	   	<div>
-	   		<p>ログインID:<%=/*~User*/.getId()%> </p>
-	    </div>
-	     <div>
-	         <p>パスワード:<%=/*~User*/.getPass()%></p>
-	     </div>
-
-	     <div>
-	    	<a href="/UserRegistration/RegisterUser">戻る</a>
-	     </div>
-	     <div>
-	    	<a href="/UserRegistration/RegisterUser?action=done">登録</a>
-	     </div>
-
-		
+		<form action="RegisterServlet" method="post">
+			<div>
+		    	<h2>下記のユーザーを登録します</h2>
+			</div>
+		   	<div>
+		   		<span>ユーザーID:${id}</span>
+		    </div>
+		     <div>
+		     	<span>ユーザー名:${name}</span>
+		     </div>
+		     <div>
+		     	<span>パスワード:${pass}</span>
+		     </div>
+		     <div>
+		    	<a href="register.jsp">戻る</a>
+		     </div>
+		     <div>
+		    	<input type="submit" value="完了" >
+		     </div>
+		</form>
 	</div>
 </body>
 </html>
