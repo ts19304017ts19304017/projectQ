@@ -11,13 +11,13 @@
 	<div>	
 		<form action="RegisterConfirmServlet" method="post">
 			<div>
-				ユーザーID<input pattern="^([a-zA-Z0-9]{6,})$" type="text" name="user_id" required>
-			</div>
-			<div>
-				パスワード<input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" name="user_pass"  maxlength="16" required>
+				ユーザーID<input pattern="^([a-zA-Z0-9]{6,})$" type="text" name="user_name_id" required>
 			</div>
 			<div>
 				ユーザー名<input type="text" name="user_name">
+			</div>
+			<div>
+				パスワード<input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" type="password" name="user_pass"  maxlength="16" required>
 			</div>
 			<div>
 				<input type="submit" value="確認" >

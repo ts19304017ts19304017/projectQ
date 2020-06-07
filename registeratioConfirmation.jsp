@@ -8,27 +8,25 @@
 </head>
 <body>
 	<div>
-		<form action="RegisterServle" method="post">
+		<form action="RegisterServlet" method="post">
 			<div>
 		    	<h2>下記のユーザーを登録します</h2>
 			</div>
 		   	<div>
-		   		<p>ユーザーID:${id} </p>
+		   		<span>ユーザーID:${id}</span>
 		    </div>
 		     <div>
-		         <p>パスワード:${pass}</p>
+		     	<span>ユーザー名:${name}</span>
 		     </div>
 		     <div>
-		     	<p>ユーザー名:${name}</p>
+		     	<span>パスワード:${pass}</span>
 		     </div>
-
 		     <div>
 		    	<a href="register.jsp">戻る</a>
 		     </div>
 		     <div>
 		    	<input type="submit" value="完了" >
 		     </div>
-
 		</form>
 	</div>
 </body>
