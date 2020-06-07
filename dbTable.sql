@@ -1,6 +1,7 @@
 CREATE TABLE user_table
 (
-	user_id NUMBER(18) NOT NULL,
+	user_id NUMBER(10) NOT NULL,
+	user_name_id NUMBER(18) NOT NULL,	
 	user_name VARCHAR2(40) NOT NULL,
 	user_pass VARCHAR2(12) NOT NULL,
 	user_pro VARCHAR2(300) NOT NULL,
@@ -9,8 +10,14 @@ CREATE TABLE user_table
 	user_key_flag NUMBER(1) default  0 NOT NULL,
 	delete_time DATE,
 	primary key(user_id),
-	unique (user_pass)
+	unique(user_name_id)
 );
+
+create sequence user_id
+start with 1
+increment by 1
+maxvalue 10000
+;
 
 
 CREATE TABLE follow_table
