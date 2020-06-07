@@ -1,7 +1,7 @@
 CREATE TABLE user_table
 (
 	user_id NUMBER(18) NOT NULL,
-	user_naem VARCHAR2(40) NOT NULL,
+	user_name VARCHAR2(40) NOT NULL,
 	user_pass VARCHAR2(12) NOT NULL,
 	user_pro VARCHAR2(300) NOT NULL,
 	user_pro_image VARCHAR2(100) NOT NULL ,
